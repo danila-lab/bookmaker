@@ -129,7 +129,7 @@ footer {
                 <li><a href="#">Casino</a></li>
                 <li><a href="#">Live Betting</a></li>
                 <li><a href="#">Promotions</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Contact</a></li>
             <?php
             if (isset($_SESSION['user_name'])) {
                 echo '<li><a href="logout.php">Logout</a></li>';
