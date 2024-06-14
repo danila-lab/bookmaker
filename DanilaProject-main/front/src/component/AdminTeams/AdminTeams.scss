@@ -1,0 +1,49 @@
+@import '../../styles/vars.scss';
+
+.AdminTeams {
+    padding: 20px;
+
+    &-Create {
+        margin-bottom: 20px;
+
+        &-button {
+            width: 150px;
+            height: 40px;
+        }
+    }
+
+    &-Table {
+        border-collapse: collapse;
+        width: 100%;
+
+        & thead {
+            background-color: $color-selected;
+        }
+
+        & table, tr, th, td {
+            border: 2px solid $color-black-light;
+            text-align: center;
+        }
+
+        & th, td {
+            padding: 10px; /* Добавляет отступ вокруг содержимого ячеек */
+        }
+
+        &-Header {
+
+        }
+
+        &-Content {
+
+            &-Action {
+                cursor: pointer;
+                color: $button-background;
+                transition: 0.3s ease-in-out;
+
+                &:hover {
+                    color: $button-secondary-background_hover;
+                }
+            }
+        }
+    }
+}

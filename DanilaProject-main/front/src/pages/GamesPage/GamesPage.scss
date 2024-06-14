@@ -1,0 +1,19 @@
+@import './../../styles/vars.scss';
+
+.GamesPage {
+  display: flex;
+
+  &-Categories {
+    width: 20%;
+  }
+
+  &-Games {
+    width: 80%;
+    margin-inline: 50px;
+    height: 100%;
+  }
+
+  //&-BetsPanel {
+  //  width: 20%;
+  //}
+}

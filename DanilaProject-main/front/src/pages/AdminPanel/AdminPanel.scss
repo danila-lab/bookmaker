@@ -1,0 +1,39 @@
+@import '../../styles/vars.scss';
+
+.AdminPanel {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    margin: -40px;
+
+    &-Menu {
+        position: fixed;
+        width: 10%;
+        height: 100%;
+        background-color: $color-black-second;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-Items {
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 24px;
+            margin-top: 30px;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                color: $color-link_hover;
+            }
+
+            &_selected {
+                color: $button-secondary-background;
+            }
+        }
+    }
+
+    &-Content {
+        margin-left: 10.5%;
+        width: 90%;
+    }
+}

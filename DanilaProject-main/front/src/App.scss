@@ -1,0 +1,10 @@
+@import './styles/vars.scss';
+
+.App {
+  background-color: $color-black;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-block: 40px;
+  height: 100%;
+}

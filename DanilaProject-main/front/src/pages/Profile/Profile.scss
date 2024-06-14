@@ -1,0 +1,44 @@
+@import './../../styles/vars.scss';
+
+.Profile {
+    display: flex;
+    flex-direction: row;
+
+    &-Menu {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        height: 100%;
+
+        &-Item {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                color: $button-background_hover;
+            }
+
+            &_selected {
+                color: $button-secondary-background;
+            }
+        }
+    }
+
+    &-Content {
+        width: 75%;
+    }
+}
+
+.ProfileInfo {
+
+    &-Info {
+
+        & p {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    }
+}

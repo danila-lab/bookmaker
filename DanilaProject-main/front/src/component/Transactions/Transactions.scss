@@ -1,0 +1,16 @@
+@import "../../styles/vars.scss";
+
+.Transactions {
+    width: 100%;
+
+    &-Item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        border: 2px solid $color-link_hover;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 10px;
+        // justify-content: space-between;
+    }
+}

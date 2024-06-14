@@ -1,0 +1,92 @@
+@import '../../styles/vars.scss';
+
+.AdminGamesDetails {
+    min-width: 70vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-Left {
+        width: 40%;
+    }
+
+    &-Right {
+        margin-left: 80px;
+        width: 80%;
+
+        &-Bets {
+
+            &-Header {
+                // border: 1px solid $color-white;
+                width: 100%;
+
+                & table {
+                    width: 100%;
+
+                    & td {
+                        width: 20%;
+                    }
+                }
+            }
+
+            &-Items {
+                margin-top: 20px;
+                overflow: auto;
+                height: 200px;
+                width: 100%;
+                border: 1px solid black;
+                padding: 20px;
+                padding-top: 0;
+
+                &-Item {
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-inline-start: 20px;
+                    padding-inline-end: 100px;
+                    align-items: center;
+                    height: 100px;
+                    border: 1px solid $color-white;
+                    border-radius: 15px;
+
+                }
+            }
+        }
+    }
+}
+
+.AwaitingResult {
+    height: 60vh;
+    min-width: 80vw;
+
+    &-Games {
+        border: 3px solid $color-selected;
+        border-radius: 15px;
+        padding: 20px;
+        overflow-y: auto;
+
+        &-Header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        &-Item {
+            display: flex;
+            flex-direction: row;
+            border: 3px solid $color-link_hover;
+            border-radius: 15px;
+            padding: 20px;
+            align-items: center;
+
+            &-Info {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 80%;
+            }
+        }
+    }
+}

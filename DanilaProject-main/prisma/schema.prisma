@@ -1,0 +1,116 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:root@localhost:3306/bet_db"
+}
+
+model User {
+  id              Int               @id @default(autoincrement())
+  name            String
+  email           String            @unique
+  password        String
+  role            Role              @relation(fields: [role_id], references: [id])
+  role_id         Int
+  balance         Float             @default(0.00) @map("DECIMAL(10,2)")
+  is_locked       Boolean           @default(false)
+  bets            Bet[]
+  DepositHistory  DepositHistory[]
+  WithdrawHistory WithdrawHistory[]
+}
+
+model Role {
+  id   Int    @id @default(autoincrement())
+  name String
+  User User[]
+}
+
+model Category {
+  id             Int     @id @default(autoincrement())
+  name           String  @unique
+  games          Game[]
+  img            String?
+  channel_stream String?
+}
+
+model Team {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  teamGames TeamGame[]
+  img       String?
+}
+
+model TeamGame {
+  id          Int   @id @default(autoincrement())
+  team        Team  @relation(fields: [team_id], references: [id], onDelete: Cascade)
+  team_id     Int
+  coefficient Float @map("DECIMAL(10,2)") @default(0.00)
+  totalBid    Float @default(0.00)
+  game1       Game? @relation(name: "TeamGame1")
+  game2       Game? @relation(name: "TeamGame2")
+}
+
+model Game {
+  id               Int      @id @default(autoincrement())
+  category         Category @relation(fields: [category_id], references: [id], onDelete: Cascade)
+  category_id      Int
+  teamGame1        TeamGame @relation(name: "TeamGame1", fields: [teamGame1_id], references: [id], onDelete: Cascade)
+  teamGame1_id     Int      @unique
+  teamGame2        TeamGame @relation(name: "TeamGame2", fields: [teamGame2_id], references: [id], onDelete: Cascade)
+  teamGame2_id     Int      @unique
+  type             GameType
+  bets             Bet[]
+  is_active        Boolean  @default(true)
+  is_bets_open     Boolean  @default(true)
+  game_start_date  DateTime
+  game_finish_date DateTime
+  channel_stream   String?
+  team_won         String?
+}
+
+enum TeamSelection {
+  team1
+  team2
+}
+
+enum GameType {
+  manual
+  auto
+}
+
+model Bet {
+  id           Int           @id @default(autoincrement())
+  amount       Float         @map("DECIMAL(10,2)") @default(0.00)
+  game         Game          @relation(fields: [game_id], references: [id], onDelete: Cascade)
+  game_id      Int
+  selectedTeam TeamSelection
+  user         User          @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id      Int
+  is_returned  Boolean       @default(false)
+}
+
+model DepositHistory {
+  id             Int      @id @default(autoincrement())
+  amount         Float    @map("DECIMAL(10,2)") @default(0.00)
+  payment_method String
+  date           DateTime
+  user           User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id        Int
+}
+
+model WithdrawHistory {
+  id       Int      @id @default(autoincrement())
+  amount   Float    @map("DECIMAL(10,2)") @default(0.00)
+  receiver String
+  date     DateTime
+  user     User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  user_id  Int
+}

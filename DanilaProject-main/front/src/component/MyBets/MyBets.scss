@@ -1,0 +1,59 @@
+@import "../../styles/vars.scss";
+
+.MyBets {
+
+  &-Header {
+    margin-top: -60px;
+    width: 100%;
+
+    & Button {
+      margin-right: 50px;
+      padding-inline: 20px;
+    }
+
+    margin-bottom: 30px;
+  }
+
+  &-Content {
+
+    &-Bet {
+      background-color: $color-black-second;
+      margin-bottom: 20px;
+      border-radius: 15px;
+
+      &-Header {
+        padding-inline: 10px;
+        display: flex;
+        justify-content: space-between;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-color: $color-selected;
+        width: 100%;
+      }
+
+      &-Content {
+        padding-block: 20px;
+        padding-inline: 40px;
+        display: flex;
+
+        &-Game {
+          width: 150px;
+        }
+
+        &-Bet {
+
+        }
+
+        &-Amount {
+          margin-left: 100px;
+          display: flex;
+          align-items: center;
+        }
+
+        &-Result {
+          margin-left: 100px;
+        }
+      }
+    }
+  }
+}

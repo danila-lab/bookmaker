@@ -1,0 +1,119 @@
+@import './vars.scss';
+@import './fonts.scss';
+
+* {
+  font-family: 'Poppins', sans-serif;
+  color: $color-white;
+  font-size: 18px;
+}
+
+a {
+  font-size: 20px;
+  font-weight: 600;
+  color: $color-white;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    color: $color-link_hover;
+  }
+}
+
+button {
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.Button {
+  background-color: $button-background;
+  color: $color-black;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 22px;
+
+
+  &:hover {
+    background-color: $button-background_hover;
+  }
+}
+
+.Button_secondary {
+  border: 3px solid $button-background;
+  background-color: transparent;
+  color: $color-white;
+  font-weight: 500;
+  border-radius: 10px;
+  font-size: 20px;
+
+  &_selected {
+    background-color: #b5935d;
+  }
+
+  &:hover:not(.Button_secondary_selected) {
+    background-color: $button-secondary-background_hover;
+  }
+}
+
+.Button_disabled {
+  cursor: inherit;
+  background-color: $button-background_disabled;
+  color: $color-black;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 22px;
+
+  &:hover {
+    background-color: $button-background_disabled;
+  }
+}
+
+.Select {
+  outline: none;
+  background-color: transparent;
+  border: 3px solid $button-background;
+  color: $color-white;
+  border-radius: 10px;
+
+  & option {
+    background-color: transparent;
+    color: $color-black;
+
+    &:disabled {
+      background-color: $color-link_hover;
+    }
+  }
+}
+
+.Select_secondary {
+  outline: none;
+  background-color: transparent;
+  border: 3px solid $button-background_disabled;
+  color: $color-white;
+  border-radius: 10px;
+
+  & option {
+    background-color: transparent;
+    color: $color-black;
+
+    &:disabled {
+      background-color: $color-link_hover;
+    }
+  }
+}
+
+input {
+  background-color: $color-black-light;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}

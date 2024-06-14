@@ -1,0 +1,51 @@
+@import '../../styles/vars.scss';
+
+.AdminGames {
+    padding: 20px;
+
+    &-Header {
+        border: 4px solid $color-black-light;
+        margin-left: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        border-radius: 15px;
+        justify-content: space-between;
+
+        &-Left {
+            & select {
+                margin-right: 20px;
+                width: 200px;
+                height: 40px;
+            }
+        }
+
+        &-Right {
+            & button {
+                height: 40px;
+                width: 150px;
+            }
+        }
+
+        margin-bottom: 20px;
+    }
+
+    &-Table {
+        &-Content {
+            // width: 85%;
+            // margin-inline: 50px;
+            // height: 100%;
+
+            &-Details {
+                cursor: pointer;
+                cursor: pointer;
+                color: $button-background;
+                transition: 0.3s ease-in-out;
+
+                &:hover {
+                    color: $button-secondary-background_hover;
+                }
+            }
+        }
+    }
+}

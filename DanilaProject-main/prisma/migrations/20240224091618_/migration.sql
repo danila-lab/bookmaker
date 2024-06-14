@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `User` MODIFY `balance` DOUBLE NOT NULL DEFAULT 0.00;

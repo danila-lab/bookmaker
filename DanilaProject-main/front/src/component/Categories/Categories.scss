@@ -1,0 +1,53 @@
+@import './../../styles/vars.scss';
+
+.Categories {
+  background-color: $color-black-second;
+  padding-block: 20px;
+  padding-inline: 20px;
+  width: 100%;
+  border-radius: 15px;
+  color: red;
+
+  &-Search {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    &-input {
+      width: 80%;
+    }
+
+    &-button {
+      background-color: $color-black-light;
+      width: 40px;
+      border-radius: 10px;
+      background-image: url('./../../../public/images/icons8-search.svg');
+      background-size: 80% 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &-List {
+    margin-top: 20px;
+
+    &_selected-item {
+      background-color: $color-selected;
+    }
+
+    & ul {
+      & li {
+        user-select: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: 0.3s ease-in-out;
+        border-radius: 8px;
+        padding: 10px;
+
+        &:hover:not(.Categories-List_selected-item) {
+          background-color: $color-black-light;
+        }
+      }
+    }
+  }
+}

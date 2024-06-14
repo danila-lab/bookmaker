@@ -1,0 +1,81 @@
+@import './../../styles/vars.scss';
+
+.body-lock {
+  overflow: hidden;
+}
+.ModalWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(78, 78, 78, 0.6);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-height: 80%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  background-color: $color-black;
+  padding-block-start: 80px;
+  padding-block-end: 60px;
+  padding-inline: 80px;
+  color: $color-black;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #2b2929;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  & input {
+    background-color: $color-black-second;
+  }
+
+  &-Close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    background-image: url('./../../../public/images/icons8-close.svg');
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &-Error {
+    color: $color-red;
+    margin-bottom: 20px;
+  }
+
+  &-input {
+    margin-bottom: 20px;
+    input {
+      height: 60px;
+    }
+  }
+
+  &-button {
+    width: 100%;
+    height: 50px;
+  }
+}
